@@ -1,0 +1,7 @@
+## Vold 2.0 Generic fstab
+## - San Mehat (san@android.com)
+## 
+
+#dev_mount flash /mnt/sdcard auto /devices/virtual/mtd/mtd9/mtdblock9
+dev_mount sdcard /mnt/external_sd auto /devices/platform/rk29_sdmmc.0/mmc_host/mmc0
+dev_mount udisk /mnt/usb_storage auto /devices/platform/usb20_host/usb /devices/platform/usb20_otg/usb1
