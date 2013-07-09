@@ -11,3 +11,4 @@ To be installed into: (android)/device/rockchip/rk3188/
 **Revision history:**
 - Initial commit, gotta start somewhere
 - Merging in some of rkcrewtablets generic build
+- More updates
