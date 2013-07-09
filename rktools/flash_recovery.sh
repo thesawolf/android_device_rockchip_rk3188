@@ -8,7 +8,7 @@
 # - You can flash if you see a new device (compare with previous lsusb) with ID: 2207:300a (:310b for RK3188 devices)
 # - Run the following (root) command:  sudo ./rkflashtool r 0x0 0x2000 > parm.bin
 # - And then this command: cat parm.bin
-# - In the output look for "(recovery)" and note well the numbers that precede it. In my case it was: ",0x00008000@0x00010000(recovery),"  (notice the @ character separating the two hex numbers) (0x00012000@0x00010000 (recovery) on my RK3188 MK908)
+# - In the output look for "(recovery)" and note well the numbers that precede it. In my case it was: ",0x00008000@0x00010000(recovery),"  (notice the @ character separating the two hex numbers) (0x00010000@0x00012000 (recovery) on my RK3188 MK908)
 # - Modify the flash_kernel.sh script's first line ("rkflashtool w 0x... 0x... < recovery.img) to use the two numbers above, BUT SWAPPED (first the hex number after the @, followed by the one before it). In my case that meant leaving the line as:
 #       sudo ./rkflashtool w 0x12000 0x10000 < recovery.img
 # - Make the script executable by typing in the terminal: chmod +x flash_kernel.sh
