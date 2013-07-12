@@ -32,11 +32,11 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x80000000
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 # build the kernel
+# SAW - moving to prebuilt kernel to save time and config options
 #TARGET_KERNEL_SOURCE := kernel/rockchip/rk3188
 #TARGET_KERNEL_CONFIG := mk908-defconfig
 #TARGET_KERNEL_CUSTOM_TOOLCHAIN := prebuilts/gcc/linux-x86/arm/android-toolchain-eabi/bin/arm-linux-androideabi-
-# Fallback
-TARGET_PREBUILT_KERNEL := device/rockchip/rk3188/kernel
+TARGET_PREBUILT_KERNEL := device/rockchip/rk3188/kernel/kernel
 
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_SDCARD_INTERNAL := true
@@ -57,11 +57,11 @@ BOARD_WPA_SUPPLICANT_DRIVER := WEXT
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
 BOARD_WLAN_DEVICE := bcmdhd
-WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/rkwifi.ko"
-WIFI_DRIVER_MODULE_NAME := "wlan"
+#WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/rkwifi.ko"
+#WIFI_DRIVER_MODULE_NAME := "wlan"
 
 # GRAPHICS
-BOARD_EGL_CFG := device/rockchip/rk3188/egl.cfg
+BOARD_EGL_CFG := device/rockchip/rk3188/prebuilt/lib/egl/egl.cfg
 USE_OPENGL_RENDERER := true
 BOARD_NEEDS_MEMORYHEAPPMEM := true
 TARGET_USES_ION := true

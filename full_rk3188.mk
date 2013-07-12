@@ -8,12 +8,7 @@ $(call inherit-product-if-exists, vendor/rockchip/rk3188/rk3188-vendor.mk)
 DEVICE_PACKAGE_OVERLAYS += device/rockchip/rk3188/overlay
 
 LOCAL_PATH := device/rockchip/rk3188
-#LOCAL_KERNEL := device/rockchip/rk3188/kernel
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := $(LOCAL_PATH)/kernel
-else
-	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
+LOCAL_KERNEL := device/rockchip/rk3188/prebuilt/kernel/kernel
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
@@ -40,7 +35,7 @@ PRODUCT_COPY_FILES += \
 
 # copy prebuilt modules
 PRODUCT_COPY_FILES += \
-	$(call find-copy-subdir-files,*,device/rockchip/rk3188/prebuilt/lib/modules,system/lib/modules)
+	$(call find-copy-subdir-files,*,device/rockchip/rk3188/prebuilt/kernel/modules,system/lib/modules)
 
 # copy vendor firmware
 PRODUCT_COPY_FILES += \
@@ -86,7 +81,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	qemu.hw.mainkeys=0 \
 	wifi.interface=wlan0 \
 	wifi.supplicant_scan_interval=15 \
-	persist.sys.usb.config=mass_storage \
+	persist.sys.usb.config=mass_storage,adb \
 	ro.kernel.checkjni=0 \
 	ro.sf.lcdc_composer=0 \
 	keyguard.no_require_sim=true \
@@ -134,11 +129,18 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Camera
 PRODUCT_PACKAGES += \
 	Camera \
+	camera.rk30board \
+	camera.goldfish
 
 # Audio
 PRODUCT_PACKAGES += \
 	audio.primary.default \
+	audio.primary.rk30board \
 	audio_policy.default \
+	audo_policy.rk30board \
+	alsa.default \
+	acoustics.default \
+	audio.r_submix.default \
 	tinyplay \
 	tinycap \
 	tinymix \
@@ -169,7 +171,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	ro.secure=0 \
 	ro.allow.mock.location=1 \
 	ro.debuggable=1 \
-	persist.sys.usb.config=mtp
+	persist.sys.usb.config=mass_storage,adb
 	
 $(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
 #$(call inherit-product, build/target/product/full.mk)
