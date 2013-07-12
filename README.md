@@ -12,3 +12,4 @@ To be installed into: (android)/device/rockchip/rk3188/
 - Initial commit, gotta start somewhere
 - Merging in some of rkcrewtablets generic build
 - More updates
+- Initial mali gralloc, need to merge in properly now
