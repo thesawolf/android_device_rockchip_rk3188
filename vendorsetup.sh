@@ -1,0 +1,1 @@
+add_lunch_combo full_rk3188-userdebug

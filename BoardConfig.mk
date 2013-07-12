@@ -1,10 +1,10 @@
-USE_CAMERA_STUB := true
-
 # inherit from the proprietary version
--include vendor/rockchip/rk3188/BoardConfigVendor.mk
+#-include vendor/rockchip/rk3188/BoardConfigVendor.mk
 
 TARGET_ARCH := arm
 TARGET_NO_BOOTLOADER := true
+TARGET_NO_RADIOIMAGE := true
+
 TARGET_BOARD_PLATFORM := rk3188
 TARGET_BOARD_HARDWARE := rk3188
 TARGET_CPU_ABI := armeabi-v7a
@@ -32,11 +32,14 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x80000000
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 # build the kernel
-TARGET_KERNEL_CONFIG := mk908-defconfig
+#TARGET_KERNEL_SOURCE := kernel/rockchip/rk3188
+#TARGET_KERNEL_CONFIG := mk908-defconfig
+#TARGET_KERNEL_CUSTOM_TOOLCHAIN := prebuilts/gcc/linux-x86/arm/android-toolchain-eabi/bin/arm-linux-androideabi-
 # Fallback
 TARGET_PREBUILT_KERNEL := device/rockchip/rk3188/kernel
 
 BOARD_HAS_NO_SELECT_BUTTON := true
+BOARD_HAS_SDCARD_INTERNAL := true
 
 PRODUCT_CHARACTERISTICS := tablet
 
