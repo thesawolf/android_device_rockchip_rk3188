@@ -2,6 +2,12 @@
 ## - San Mehat (san@android.com)
 ## 
 
-#dev_mount flash /mnt/sdcard auto /devices/virtual/mtd/mtd9/mtdblock9
+dev_mount flash /mnt/sdcard auto /devices/virtual/mtd/mtd9/mtdblock9
 dev_mount sdcard /mnt/external_sd auto /devices/platform/rk29_sdmmc.0/mmc_host/mmc0
-dev_mount udisk /mnt/usb_storage auto /devices/platform/usb20_host/usb /devices/platform/usb20_otg/usb1
+#dev_mount udisk /mnt/usb_storage auto /devices/platform/usb20_host/usb /devices/platform/usb20_otg/usb1
+dev_mount udisk0 /mnt/usb_storage/USB_DISK0 1 /devices/platform/usb
+dev_mount udisk1 /mnt/usb_storage/USB_DISK1 1 /devices/platform/usb
+dev_mount udisk2 /mnt/usb_storage/USB_DISK2 1 /devices/platform/usb
+dev_mount udisk3 /mnt/usb_storage/USB_DISK3 1 /devices/platform/usb
+dev_mount udisk4 /mnt/usb_storage/USB_DISK4 1 /devices/platform/usb
+dev_mount udisk5 /mnt/usb_storage/USB_DISK5 1 /devices/platform/usb

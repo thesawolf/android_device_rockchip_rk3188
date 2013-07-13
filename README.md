@@ -17,4 +17,7 @@ To be installed into: (android)/device/rockchip/rk3188/
 - Reorganizing the build structure to make more sense
 - Kernel options moved to prebuilt to handle future kernel versions
 (i.e. 720p, 1080p, kernels beyond 3.0.36, etc.)
+- local_manifest.xml added for compile setup, move to (android)/.repo/
+and then repo sync in the (android) directory (currently set to 
+install my CWM recovery, device tree and kernel)
 
