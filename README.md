@@ -20,4 +20,5 @@ To be installed into: (android)/device/rockchip/rk3188/
 - local_manifest.xml added for compile setup, move to (android)/.repo/
 and then repo sync in the (android) directory (currently set to 
 install my CWM recovery, device tree and kernel)
+- variety of toolchains installed (for kernel build)
 
