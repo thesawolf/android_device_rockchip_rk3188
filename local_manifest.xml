@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
+<remote name="origin" fetch="https://github.com/" />
 <remove-project name="CyanogenMod/android_bootable_recovery" />
-<project name="thesawolf/android_bootable_recovery_mk908" path="bootable/recovery" revision="cm-10.1" remote="github" />
-<project name="thesawolf/android_device_rockchip_rk31board" path="device/rockchip/rk31board" revision="4.2" remote="github" />
-<project name="thesawolf/android_device_rockchip_rk3188" path="device/rockchip/rk3188" revision="master" remote="github" />
-<project name="thesawolf/android_kernel_rockchip_rk3188" path="kernel/rockchip/rk3188" revision="master" remote="github" />
+<project name="thesawolf/android_bootable_recovery_mk908" path="bootable/recovery" revision="cm-10.1" remote="origin" />
+<project name="thesawolf/android_device_rockchip_rk3188" path="device/rockchip/rk3188" revision="master" remote="origin" />
+<project name="thesawolf/android_kernel_rockchip_rk3188" path="kernel/rockchip/rk3188" revision="master" remote="origin" />
 </manifest>
