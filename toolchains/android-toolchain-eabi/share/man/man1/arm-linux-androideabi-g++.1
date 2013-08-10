@@ -124,7 +124,7 @@
 .\" ========================================================================
 .\"
 .IX Title "GCC 1"
-.TH GCC 1 "2013-06-03" "gcc-4.8.2" "GNU"
+.TH GCC 1 "2013-06-24" "gcc-4.8.2" "GNU"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -523,7 +523,8 @@ in the following sections.
 \&\fB\-mword\-relocations 
 \&\-mfix\-cortex\-m3\-ldrd 
 \&\-munaligned\-access 
-\&\-mneon\-for\-64bits\fR
+\&\-mneon\-for\-64bits 
+\&\-mrestrict\-it\fR
 .Sp
 \&\fI\s-1AVR\s0 Options\fR
 \&\fB\-mmcu=\fR\fImcu\fR \fB\-maccumulate\-args \-mbranch\-cost=\fR\fIcost\fR 
@@ -10764,6 +10765,11 @@ defined.
 Enables using Neon to handle scalar 64\-bits operations. This is
 disabled by default since the cost of moving data from core registers
 to Neon is high.
+.IP "\fB\-mrestrict\-it\fR" 4
+.IX Item "-mrestrict-it"
+Restricts generation of \s-1IT\s0 blocks to conform to the rules of ARMv8.
+\&\s-1IT\s0 blocks can only contain a single 16\-bit instruction from a select
+set of instructions. This option is on by default for ARMv8 Thumb mode.
 .PP
 \fI\s-1AVR\s0 Options\fR
 .IX Subsection "AVR Options"
@@ -12871,9 +12877,14 @@ Intel Core i7 \s-1CPU\s0 with 64\-bit extensions, \s-1MMX\s0, \s-1SSE\s0, \s-1SS
 Intel Core \s-1CPU\s0 with 64\-bit extensions, \s-1MMX\s0, \s-1SSE\s0, \s-1SSE2\s0, \s-1SSE3\s0, \s-1SSSE3\s0,
 \&\s-1SSE4\s0.1, \s-1SSE4\s0.2, \s-1AVX\s0, \s-1AES\s0, \s-1PCLMUL\s0, \s-1FSGSBASE\s0, \s-1RDRND\s0 and F16C instruction
 set support.
+.IP "\fBcore\-avx2\fR" 4
+.IX Item "core-avx2"
+Intel Core \s-1CPU\s0 with 64\-bit extensions, \s-1MOVBE\s0, \s-1MMX\s0, \s-1SSE\s0, \s-1SSE2\s0, \s-1SSE3\s0, \s-1SSSE3\s0,
+\&\s-1SSE4\s0.1, \s-1SSE4\s0.2, \s-1AVX\s0, \s-1AVX2\s0, \s-1AES\s0, \s-1PCLMUL\s0, \s-1FSGSBASE\s0, \s-1RDRND\s0, \s-1FMA\s0, \s-1BMI\s0, \s-1BMI2\s0
+and F16C instruction set support.
 .IP "\fBatom\fR" 4
 .IX Item "atom"
-Intel Atom \s-1CPU\s0 with 64\-bit extensions, \s-1MMX\s0, \s-1SSE\s0, \s-1SSE2\s0, \s-1SSE3\s0 and \s-1SSSE3\s0
+Intel Atom \s-1CPU\s0 with 64\-bit extensions, \s-1MOVBE\s0, \s-1MMX\s0, \s-1SSE\s0, \s-1SSE2\s0, \s-1SSE3\s0 and \s-1SSSE3\s0
 instruction set support.
 .IP "\fBk6\fR" 4
 .IX Item "k6"

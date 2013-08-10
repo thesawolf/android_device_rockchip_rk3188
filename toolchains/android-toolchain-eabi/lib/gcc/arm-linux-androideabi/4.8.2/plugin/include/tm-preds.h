@@ -1,5 +1,5 @@
 /* Generated automatically by the program 'build/genpreds'
-   from the machine description file '/mnt/jenkins/workspace/linaro-android_toolchain-4.8-2013.06/build/objdir/../build/../gcc/gcc-linaro-4.8-2013.06/gcc/config/arm/arm.md'.  */
+   from the machine description file '/mnt/jenkins/workspace/linaro-android_toolchain-4.8-2013.07/build/objdir/../build/../gcc/gcc-linaro-4.8-2013.07-1/gcc/config/arm/arm.md'.  */
 
 #ifndef GCC_TM_PREDS_H
 #define GCC_TM_PREDS_H
@@ -105,7 +105,6 @@ extern int neon_struct_operand (rtx, enum machine_mode);
 extern int neon_struct_or_register_operand (rtx, enum machine_mode);
 extern int add_operator (rtx, enum machine_mode);
 extern int mem_noofs_operand (rtx, enum machine_mode);
-extern int call_insn_operand (rtx, enum machine_mode);
 #endif /* HAVE_MACHINE_MODES */
 
 #define CONSTRAINT_NUM_DEFINED_P 1
@@ -126,7 +125,6 @@ enum constraint_num
   CONSTRAINT_q,
   CONSTRAINT_b,
   CONSTRAINT_c,
-  CONSTRAINT_Cs,
   CONSTRAINT_I,
   CONSTRAINT_J,
   CONSTRAINT_K,
@@ -172,7 +170,6 @@ enum constraint_num
   CONSTRAINT_Q,
   CONSTRAINT_Uu,
   CONSTRAINT_Uw,
-  CONSTRAINT_Ss,
   CONSTRAINT__LIMIT
 };
 
@@ -184,10 +181,8 @@ insn_constraint_len (char fc, const char *str ATTRIBUTE_UNUSED)
 {
   switch (fc)
     {
-    case 'C': return 2;
     case 'D': return 2;
     case 'P': return 2;
-    case 'S': return 2;
     case 'U': return 2;
     default: break;
     }

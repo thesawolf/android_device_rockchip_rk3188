@@ -21,4 +21,5 @@ To be installed into: (android)/device/rockchip/rk3188/
 and then repo sync in the (android) directory (currently set to 
 install my CWM recovery, device tree and kernel)
 - variety of toolchains installed (for kernel build)
+- updated Linaro toolchains to 2013.07 release
 

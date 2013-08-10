@@ -12,4 +12,4 @@ Current toolchains:
     GCC 4.7 from Google repo
 
 [4] android-toolchain-eabi
-    GCC Linaro 4.8 (2013.06) toolchain
+    GCC Linaro 4.8 (2013.07) toolchain

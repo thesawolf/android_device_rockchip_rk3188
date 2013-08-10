@@ -659,26 +659,6 @@ gen_rtx_fmt_eE_stat (RTX_CODE code, enum machine_mode mode,
         gen_rtx_fmt_eE_stat (c, m, p0, p1 MEM_STAT_INFO)
 
 static inline rtx
-gen_rtx_fmt_Ess_stat (RTX_CODE code, enum machine_mode mode,
-	rtvec arg0,
-	const char *arg1,
-	const char *arg2 MEM_STAT_DECL)
-{
-  rtx rt;
-  rt = rtx_alloc_stat (code PASS_MEM_STAT);
-
-  PUT_MODE (rt, mode);
-  XVEC (rt, 0) = arg0;
-  XSTR (rt, 1) = arg1;
-  XSTR (rt, 2) = arg2;
-
-  return rt;
-}
-
-#define gen_rtx_fmt_Ess(c, m, p0, p1, p2)\
-        gen_rtx_fmt_Ess_stat (c, m, p0, p1, p2 MEM_STAT_INFO)
-
-static inline rtx
 gen_rtx_fmt_ses_stat (RTX_CODE code, enum machine_mode mode,
 	const char *arg0,
 	rtx arg1,
@@ -1161,8 +1141,6 @@ gen_rtx_fmt_ssss_stat (RTX_CODE code, enum machine_mode mode,
   gen_rtx_fmt_s (MATCH_TEST, (MODE), (ARG0))
 #define gen_rtx_DEFINE_DELAY(MODE, ARG0, ARG1) \
   gen_rtx_fmt_eE (DEFINE_DELAY, (MODE), (ARG0), (ARG1))
-#define gen_rtx_DEFINE_COND_EXEC(MODE, ARG0, ARG1, ARG2) \
-  gen_rtx_fmt_Ess (DEFINE_COND_EXEC, (MODE), (ARG0), (ARG1), (ARG2))
 #define gen_rtx_DEFINE_PREDICATE(MODE, ARG0, ARG1, ARG2) \
   gen_rtx_fmt_ses (DEFINE_PREDICATE, (MODE), (ARG0), (ARG1), (ARG2))
 #define gen_rtx_DEFINE_SPECIAL_PREDICATE(MODE, ARG0, ARG1, ARG2) \
