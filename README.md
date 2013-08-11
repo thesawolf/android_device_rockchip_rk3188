@@ -22,4 +22,4 @@ and then repo sync in the (android) directory (currently set to
 install my CWM recovery, device tree and kernel)
 - variety of toolchains installed (for kernel build)
 - updated Linaro toolchains to 2013.07 release
-
+- lots of changes to reflect some of the stuff found in the MK908 SDK1 leak

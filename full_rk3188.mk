@@ -13,6 +13,13 @@ LOCAL_KERNEL := device/rockchip/rk3188/prebuilt/kernel/kernel
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
+# system files
+PRODUCT_COPY_FILES += \
+        device/rockchip/rk3188/init.rc:root/init.rc \
+	device/rockchip/rk3188/init.rk3188.rc:root/init.rk3188.rc \
+	device/rockchip/rk3188/init.rk3188.usb.rc:root/init.rk3188.usb.rc \
+	device/rockchip/rk3188/ueventd.rk3188.rc:root/ueventd.rk3188.rc
+
 # copy prebuilt bins
 PRODUCT_COPY_FILES += \
 	$(call find-copy-subdir-files,*,device/rockchip/rk3188/prebuilt/bin,system/bin)
@@ -45,17 +52,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	$(call find-copy-subdir-files,*,device/rockchip/rk3188/prebuilt/usr/keylayout,system/usr/keylayout)
 
-# copy ramdisk files
-PRODUCT_COPY_FILES += \
-	$(call find-copy-subdir-files,*,device/rockchip/rk3188/ramdisk,root)
-
 # copy rktools
 PRODUCT_COPY_FILES += \
 	$(call find-copy-subdir-files,*,device/rockchip/rk3188/rktools,rktools)
 
 # copy the builder
-PRODUCT_COPY_FILES += \
-	device/rockchip/rk3188/custom_boot.sh:custom_boot.sh
+#PRODUCT_COPY_FILES += \
+#	device/rockchip/rk3188/custom_boot.sh:custom_boot.sh
 
 # hardware-specific feature permissions
 PRODUCT_COPY_FILES += \
@@ -86,10 +89,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.sf.lcdc_composer=0 \
 	keyguard.no_require_sim=true \
 	dalvik.vm.jniopts=warnonly \
-	ro.rksdk.version=2013-07-09.4.2.2.tungsten.1.0 \
+	ro.rksdk.version=2013-08-11.4.2.2.tungsten.1.0 \
 	sys.hwc.compose_policy=6 \
 	sys.ffmpeg_sf.switch=0 \
-	sys.dts_ac3.shield = 0 \
+	sys.dts_ac3.shield=0 \
 	sf.power.control=2073600 \
 	ro.rk.systembar.voiceicon=false \
 	ro.rk.screenoff_time=-1 \

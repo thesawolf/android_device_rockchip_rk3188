@@ -1,0 +1,76 @@
+#for sensors
+/dev/mma8452_daemon       0660   system     system
+/dev/akm8975_dev          0660   system     system
+/dev/akm8975_aot          0660   system     system
+/dev/akm8963_dev          0660   system     system
+/dev/akm_dev              0660   system     system
+/dev/gyrosensor           0660   system     system
+/dev/accel                0660   system     system
+/dev/compass              0660   system     system
+/dev/lightsensor          0660   system     system
+/dev/psensor              0660   system     system
+/dev/temperature          0660   system     system
+/dev/pressure             0660   system     system
+
+/dev/ion                  0666   system     system
+/dev/galcore              0666   system     graphics
+/dev/video0               0660   system     camera
+/dev/video1               0660   system     camera
+/dev/video2               0660   system     camera
+/dev/pmem_cam             0660   system     camera
+/dev/vpu                  0660   system     system
+/dev/vpu_service          0666   system     system
+/dev/vpu_mem              0666   system     system
+/dev/rk29-ipp             0666   system     system   
+/dev/rga                  0666   system     system
+/dev/video_state          0666   system     system
+/dev/sys_state            0660   system     system
+/dev/mirroring            0664   media      media
+
+# for Sensor HAL
+/dev/akm8973              0660   system     system
+/dev/accelerometer        0660   system     system
+
+# for mpu gyroscope 
+/dev/mpu                  0660   system     system
+/dev/mpuirq               0660   system     system
+/dev/timerirq             0660   system     system
+/dev/accelirq             0660   system     system
+/dev/compassirq           0660   system     system
+
+# for GPS
+#/dev/ttyS3                0600   gps        gps
+/dev/gps                  0660   gps        gps
+
+# for BT
+/dev/vflash               0660   bluetooth  bluetooth
+/dev/ttyS0                0660   bluetooth  bluetooth
+/dev/ttyS2                0660   bluetooth  bluetooth
+
+# for radio
+/dev/ttyUSB0              0660   radio		radio
+/dev/ttyUSB1              0660   radio		radio
+/dev/ttyUSB2              0660   radio		radio
+/dev/ttyUSB3              0660   radio		radio
+/dev/ttyUSB4              0660   radio		radio
+/dev/ttyUSB5              0660   radio		radio
+/dev/ttyUSB6              0660   radio		radio
+/dev/ttyUSB7              0660   radio		radio
+/dev/ttyUSB8              0660   radio		radio
+/dev/ttyUSB9              0660   radio		radio
+
+# for mali
+/dev/mali           	  0666   system   	 system
+/dev/ump           	  0666   system   	 system
+
+# for sgx
+/dev/pvrsrvkm         0666   system      system
+
+#for hdmi
+/sys/class/display/HDMI/enable   0664     root       system
+/sys/class/display/HDMI/mode     0664     root       system
+/sys/class/display/HDMI/scale    0664     root       system
+/sys/class/graphics/fb0/blank    0664     root    system
+
+#for DRM
+/dev/rknand_sys_storage   0660   system     system 
