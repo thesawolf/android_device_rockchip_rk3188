@@ -8,6 +8,9 @@ some modification. You do so of your own accord.
 
 To be installed into: (android)/device/rockchip/rk3188/
 
+Called from (android) via :
+. build/envsetup.sh && brunch rk3188
+
 **Revision history:**
 - Initial commit, gotta start somewhere
 - Merging in some of rkcrewtablets generic build
@@ -23,3 +26,5 @@ install my CWM recovery, device tree and kernel)
 - variety of toolchains installed (for kernel build)
 - updated Linaro toolchains to 2013.07 release
 - lots of changes to reflect some of the stuff found in the MK908 SDK1 leak
+- various changes to get things building nicer with CM versions
+- some changes to replicate fun_'s generic rk3188 cwm for better input
