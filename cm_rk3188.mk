@@ -1,7 +1,7 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # The gps config appropriate for this device
-$(call inherit-product, device/common/gps/gps_us_supl.mk)
+#$(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 $(call inherit-product-if-exists, vendor/rockchip/rk3188/rk3188-vendor.mk)
 
@@ -18,7 +18,9 @@ PRODUCT_COPY_FILES += \
         device/rockchip/rk3188/init.rc:root/init.rc \
 	device/rockchip/rk3188/init.rk3188.rc:root/init.rk3188.rc \
 	device/rockchip/rk3188/init.rk3188.usb.rc:root/init.rk3188.usb.rc \
-	device/rockchip/rk3188/ueventd.rk3188.rc:root/ueventd.rk3188.rc
+	device/rockchip/rk3188/ueventd.rk3188.rc:root/ueventd.rk3188.rc \
+	device/rockchip/rk3188/rk29-ipp.ko:root/rk29-ipp.ko \
+	device/rockchip/rk3188/rk30xxnand_ko.ko:root/rk30xxnand_ko.ko
 
 # copy prebuilt bins
 PRODUCT_COPY_FILES += \
@@ -57,8 +59,8 @@ PRODUCT_COPY_FILES += \
 	$(call find-copy-subdir-files,*,device/rockchip/rk3188/rktools,rktools)
 
 # copy the builder
-#PRODUCT_COPY_FILES += \
-#	device/rockchip/rk3188/custom_boot.sh:custom_boot.sh
+PRODUCT_COPY_FILES += \
+	device/rockchip/rk3188/custom_boot.sh:custom_boot.sh
 
 # hardware-specific feature permissions
 PRODUCT_COPY_FILES += \
@@ -181,5 +183,5 @@ $(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
 $(call inherit-product, build/target/product/full_base.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-PRODUCT_NAME := full_rk3188
+PRODUCT_NAME := cm_rk3188
 PRODUCT_DEVICE := rk3188
