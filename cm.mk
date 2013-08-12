@@ -2,7 +2,7 @@
 #$(call inherit-product, vendor/cm/config/gsm.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/rockchip/rk3188/cm_rk3188.mk)
+$(call inherit-product, device/rockchip/rk3188/full_rk3188.mk)
 
 # Inherit some common CM stuff
 $(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)

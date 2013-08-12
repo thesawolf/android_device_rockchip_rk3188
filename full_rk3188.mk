@@ -183,5 +183,5 @@ $(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
 $(call inherit-product, build/target/product/full_base.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-PRODUCT_NAME := cm_rk3188
+PRODUCT_NAME := full_rk3188
 PRODUCT_DEVICE := rk3188
