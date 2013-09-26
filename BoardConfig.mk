@@ -19,10 +19,10 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 ARCH_ARM_HAVE_VFP := true
 ARCH_ARM_HAVE_NEON := true
 ARCH_ARM_HAVE_ARMV7A := true
-TARGET_GLOBAL_CFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
-TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp 
+#TARGET_GLOBAL_CFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
+#TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp 
 
-TARGET_BOOTLOADER_BOARD_NAME := rk3188
+TARGET_BOOTLOADER_BOARD_NAME := rk30board
 BOARD_USE_LCDC_COMPOSER := false
 
 BOARD_KERNEL_CMDLINE := 
@@ -79,8 +79,8 @@ BOARD_WLAN_DEVICE 		:= bcmdhd
 WIFI_DRIVER_FW_PATH_PARAM	:= "/system/etc/firmware/fw_bcm4329.bin"
 WIFI_DRIVER_FW_PATH_P2P		:= "/system/etc/firmware/fw_bcm4329_p2p.bin"
 WIFI_DRIVER_FW_PATH_AP		:= "/system/etc/firmware/fw_bcm4329_apsta.bin"
-#WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/rkwifi.ko"
-#WIFI_DRIVER_MODULE_NAME := "wlan"
+WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/rkwifi.ko"
+WIFI_DRIVER_MODULE_NAME := "wlan"
 
 # GRAPHICS
 BOARD_EGL_CFG := device/rockchip/rk3188/prebuilt/lib/egl/egl.cfg
@@ -109,7 +109,6 @@ TARGET_FORCE_CPU_UPLOAD := true
 # MISC SETTINGS
 BOARD_SENSOR_ST := true
 BOARD_RADIO_DATAONLY := true
-TARGET_BOOTLOADER_BOARD_NAME := rk3188
 BOARD_BP_AUTO := true
 BUILD_WITH_NOFLASH := false
 

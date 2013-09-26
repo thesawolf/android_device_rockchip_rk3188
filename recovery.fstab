@@ -5,14 +5,15 @@
 /cache      ext4        /dev/block/mtd/by-name/cache
 #/data       ext4        /dev/block/mtdblock6
 /data       ext4        /dev/block/mtd/by-name/userdata
+/kernel	    mtd		kernel
 /misc       mtd         misc
 /parameter  mtd         parameter
 /recovery   mtd         recovery
 /backup     mtd         backup
-/mnt/sdcard     vfat        /dev/block/mtd/by-name/user
+/sdcard     vfat        /dev/block/mtd/by-name/user 	lun=/sys/class/android_usb/android0/f_mass_storage/lun/file
 #/sdcard     vfat        /dev/block/mtdblock9
 #/sdcard     datamedia   /dev/null
-/mnt/external_sd vfat       /dev/block/mmcblk0p1        /dev/block/mmcblk0
+/external_sd vfat       /dev/block/mmcblk0p1        /dev/block/mmcblk0	lun=/sys/class/android_usb/android0/f_mass_storage/lun1/file
 #/system     ext4        /dev/block/mtdblock8
 /system	    ext4        /dev/block/mtd/by-name/system
-#/sd-ext     ext4        /dev/block/mmcblk0p2
+/sd-ext     auto        /dev/block/mmcblk0p2

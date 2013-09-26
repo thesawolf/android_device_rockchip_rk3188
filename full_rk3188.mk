@@ -18,9 +18,12 @@ PRODUCT_COPY_FILES += \
         device/rockchip/rk3188/init.rc:root/init.rc \
 	device/rockchip/rk3188/init.rk3188.rc:root/init.rk3188.rc \
 	device/rockchip/rk3188/init.rk3188.usb.rc:root/init.rk3188.usb.rc \
+	device/rockchip/rk3188/init.recovery.rk3188.rc:root/init.recovery.rk3188.rc \
 	device/rockchip/rk3188/ueventd.rk3188.rc:root/ueventd.rk3188.rc \
 	device/rockchip/rk3188/rk29-ipp.ko:root/rk29-ipp.ko \
-	device/rockchip/rk3188/rk30xxnand_ko.ko:root/rk30xxnand_ko.ko
+	device/rockchip/rk3188/rk30xxnand_ko.ko:root/rk30xxnand_ko.ko \
+	device/rockchip/rk3188/ueventd.rc:root/ueventd.rc \
+	device/rockchip/rk3188/ueventd.goldfish.rc:root/ueventd.goldfish.rc
 
 # copy prebuilt bins
 PRODUCT_COPY_FILES += \
@@ -74,7 +77,7 @@ PRODUCT_COPY_FILES += \
 
 # build.prop
 PRODUCT_PROPERTY_OVERRIDES += \
-	persist.sys.timezone=America/New York \
+	persist.sys.timezone=America/New_York \
 	persist.sys.language=en \
 	persist.sys.country=US \
 	ro.sf.lcd_density=160 \
@@ -86,12 +89,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	qemu.hw.mainkeys=0 \
 	wifi.interface=wlan0 \
 	wifi.supplicant_scan_interval=15 \
-	persist.sys.usb.config=mass_storage,adb \
 	ro.kernel.checkjni=0 \
 	ro.sf.lcdc_composer=0 \
 	keyguard.no_require_sim=true \
 	dalvik.vm.jniopts=warnonly \
-	ro.rksdk.version=2013-08-11.4.2.2.tungsten.1.0 \
+	ro.rksdk.version=2013-08.4.2.2.tungsten.1.0 \
 	sys.hwc.compose_policy=6 \
 	sys.ffmpeg_sf.switch=0 \
 	sys.dts_ac3.shield=0 \
@@ -173,10 +175,10 @@ PRODUCT_PROPERY_OVERRIDES += \
 # usb stuff
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	service.adb.root=1 \
-	ro.secure=0 \
+	ro.secure=1 \
 	ro.allow.mock.location=1 \
 	ro.debuggable=1 \
-	persist.sys.usb.config=mass_storage,adb
+	ro.cwm.forbid_format=/misc,/kernel,/recovery
 	
 $(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
 #$(call inherit-product, build/target/product/full.mk)

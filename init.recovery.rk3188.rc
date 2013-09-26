@@ -1,9 +1,9 @@
 on early-init
-    start ueventd
     insmod /rk29-ipp.ko
     insmod /rk30xxnand_ko.ko
     write /sys/bus/platform/drivers/usb20_otg/force_usb_mode 2
-    write /sys/devices/virtual/display/HDMI/scale 80
+#    write /sys/devices/virtual/display/HDMI/scale 80
+    start ueventd
 
 on init
     export PATH /sbin
@@ -56,8 +56,8 @@ service adbd /sbin/adbd recovery
 
 # Always start adbd on userdebug and eng builds
 on property:ro.debuggable=1
-    #write /sys/class/android_usb/android0/enable 1
-    #start adbd
+    write /sys/class/android_usb/android0/enable 1
+    start adbd
     setprop service.adb.root 1
 
 # Restart adbd so it can run as root
